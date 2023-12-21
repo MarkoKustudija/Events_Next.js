@@ -1,6 +1,6 @@
 import MainHeader from "@/components/layout/MainHeader";
 import { ReactNode } from "react";
-// import "../styles/globals.css";
+import "../styles/globals.css";
 
 
 

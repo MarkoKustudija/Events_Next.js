@@ -1,6 +1,6 @@
 import EventList from "@/components/events/EventList";
 import { DUMMY_EVENTS } from "../../dummy-data";
-import "../styles/globals.css";
+// import "../styles/globals.css";
 
 
 export default function Home(props: any) {

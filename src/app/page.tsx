@@ -1,7 +1,6 @@
-import EventItem from "@/components/events/EventItem";
 import EventList from "@/components/events/EventList";
-import { Prosto_One } from "next/font/google";
 import { DUMMY_EVENTS } from "../../dummy-data";
+import "../styles/globals.css";
 
 
 export default function Home(props: any) {

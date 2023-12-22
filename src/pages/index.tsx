@@ -1,5 +1,6 @@
-import { getFeaturedEvents } from "@/api/api-util";
+import { getFeaturedEvents } from "@/helpers/api-util";
 import EventList from "@/components/events/EventList";
+import NewsLetterRegistration from "@/components/input/NewsLetterRegistration";
 // import "../styles/globals.css";
 
 
@@ -10,7 +11,7 @@ export default function Home(props: any) {
   
   return (
      <>
-     {/* <h1>Hello World</h1> */}
+     <NewsLetterRegistration />
      <EventList events={props.events}/>
      </>
   )

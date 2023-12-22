@@ -1,9 +1,10 @@
-import { getEventById, getFeaturedEvents } from "@/api/api-util";
+import { getEventById, getFeaturedEvents } from "@/helpers/api-util";
 import EventContent from "@/components/event-detail/EventContent";
 import EventLogistics from "@/components/event-detail/EventLogistics";
 import EventSummary from "@/components/event-detail/EventSummary";
 import ErrorAlert from "@/components/ui/ErrorAlert";
 import React, { Fragment } from "react";
+import Comments from "@/components/input/Comments";
 
 export default function EventDetailsPage(props: any) {
   if (!props.selectedEvent) {
@@ -34,6 +35,7 @@ export default function EventDetailsPage(props: any) {
       <EventContent>
         <p>{event.description}</p>
       </EventContent>
+      <Comments eventId= {event.id}/>
     </Fragment>
   );
 }

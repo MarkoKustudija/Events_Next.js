@@ -9,14 +9,14 @@ type CommentsProps = {
 
 function Comments({ eventId }: CommentsProps) {
   const [showComments, setShowComments] = useState<boolean>(false);
-  const [comments, setComments] = useState<Comment[]>([]);
+  const [comments, setComments] = useState([]);
   const [isFetchingComments, setIsFetchingComments] = useState<boolean>(false);
 
   // GET comments
   useEffect(() => {
     setIsFetchingComments(true);
     if (showComments) {
-      fetch("/api/comments" + eventId)
+      fetch("/api/comments/" + eventId)
         .then((response) => {
           if (!response.ok) {
             throw new Error("Failed to fetch comments");
@@ -42,7 +42,7 @@ function Comments({ eventId }: CommentsProps) {
   // ADD comment
 
   function addCommentHandler(commentData: CommentData) {
-    fetch("/api/comments" + eventId, {
+    fetch("/api/comments/" + eventId, {
       method: "POST",
       body: JSON.stringify(commentData),
       headers: {

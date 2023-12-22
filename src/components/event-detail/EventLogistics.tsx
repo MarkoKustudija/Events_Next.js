@@ -1,6 +1,5 @@
 import React from "react";
 import classes from "./EventLogistics.module.css";
-import { DUMMY_EVENTS } from "../../../dummy-data";
 import LogisticsItem from "./LogisticsItem";
 import DateIcon from "../icons/DateIcon";
 import AddressIcon from "../icons/AddressIcon";
@@ -24,14 +23,10 @@ function EventLogistics({
     year: "numeric",
   });
 
-  const addressText =
-    address?.replace(", ", "\n") ?? `${DUMMY_EVENTS[0].location}`;
-
   console.log("Debug Information:", {
     date,
     humanReadableDate,
     address,
-    addressText,
     image,
     imageAlt,
   });
@@ -54,3 +49,4 @@ function EventLogistics({
 }
 
 export default EventLogistics;
+

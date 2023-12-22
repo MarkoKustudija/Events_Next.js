@@ -5,6 +5,7 @@ import Link from "next/link";
 import AddressIcon from "../icons/AddressIcon";
 import ArrowRightIcon from "../icons/ArrowRightIcon";
 import Button from "../ui/Button";
+import { DUMMY_EVENTS } from "../../../dummy-data";
 
 export type EventItemProps = {
   id: string;
@@ -29,7 +30,7 @@ export default function EventItem({
       });
 
       const exploreLink = `/events/${id}`;
-    
+
   return (
     <li className={classes.item}>
     <img src={"/" + image} alt={title} />

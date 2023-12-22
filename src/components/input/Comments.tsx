@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from "react";
 import CommentList, { Comment } from "./CommentList";
 import classes from "./Comments.module.css";
-import NewComment from "./NewComment";
+import NewComment, { CommentData } from "./NewComment";
 
-export type CommentData = {
-  email: string;
-  name: string;
-  text: string;
+type CommentsProps = {
+  eventId: string;
 };
 
-function Comments({ id }: Comment) {
+function Comments({ eventId }: CommentsProps) {
   const [showComments, setShowComments] = useState<boolean>(false);
   const [comments, setComments] = useState<Comment[]>([]);
   const [isFetchingComments, setIsFetchingComments] = useState<boolean>(false);
@@ -18,7 +16,7 @@ function Comments({ id }: Comment) {
   useEffect(() => {
     setIsFetchingComments(true);
     if (showComments) {
-      fetch("/api/comments" + id)
+      fetch("/api/comments" + eventId)
         .then((response) => {
           if (!response.ok) {
             throw new Error("Failed to fetch comments");
@@ -44,7 +42,7 @@ function Comments({ id }: Comment) {
   // ADD comment
 
   function addCommentHandler(commentData: CommentData) {
-    fetch("/api/comments" + id, {
+    fetch("/api/comments" + eventId, {
       method: "POST",
       body: JSON.stringify(commentData),
       headers: {

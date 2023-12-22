@@ -4,6 +4,8 @@ import classes from "./EventItem.module.css";
 import Link from "next/link";
 import AddressIcon from "../icons/AddressIcon";
 import ArrowRightIcon from "../icons/ArrowRightIcon";
+import Button from "../ui/Button";
+import { DUMMY_EVENTS } from "../../../dummy-data";
 
 export type EventItemProps = {
   id: string;
@@ -28,7 +30,7 @@ export default function EventItem({
       });
 
       const exploreLink = `/events/${id}`;
-    
+
   return (
     <li className={classes.item}>
     <img src={"/" + image} alt={title} />
@@ -45,12 +47,12 @@ export default function EventItem({
         </div>
       </div>
       <div className={classes.actions}>
-        <Link href={exploreLink}>
+        <Button href={exploreLink}>
           <span>Explore Event</span>
           <span className={classes.icon}>
             <ArrowRightIcon />
           </span>
-        </Link>
+        </Button>
       </div>
     </div>
   </li>

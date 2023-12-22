@@ -1,5 +1,5 @@
 import { AxiosRequestConfig, AxiosResponse } from "axios";
-import { axiosInstance } from "@/api/baseApi";
+import { axiosInstance } from "@/pages/api/baseApi";
 
 export const prepareRequest = async (config: AxiosRequestConfig): Promise<any> => {
   return {

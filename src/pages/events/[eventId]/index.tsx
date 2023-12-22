@@ -1,4 +1,4 @@
-import { getEventById, getFeaturedEvents } from "@/api/api-util";
+import { getEventById, getFeaturedEvents } from "@/helpers/api-util";
 import EventContent from "@/components/event-detail/EventContent";
 import EventLogistics from "@/components/event-detail/EventLogistics";
 import EventSummary from "@/components/event-detail/EventSummary";

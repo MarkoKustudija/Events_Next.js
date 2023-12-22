@@ -2,7 +2,7 @@ import { EventItemProps } from "@/components/events/EventItem";
 import EventList from "@/components/events/EventList";
 import React from "react";
 import { useRouter } from "next/router";
-import { getAllEvents } from "@/api/api-util";
+import { getAllEvents } from "@/helpers/api-util";
 
 type AllEventsPageProps = {
   events: EventItemProps[];

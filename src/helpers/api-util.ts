@@ -1,5 +1,6 @@
-import { DUMMY_EVENTS } from "../../dummy-data";
+// import { DUMMY_EVENTS } from "../../dummy-data";
 
+// from dummy_backend firebase
 export async function getAllEvents() {
     const response = await fetch(
      'https://events-a935c-default-rtdb.firebaseio.com/events.json',
@@ -25,8 +26,8 @@ export async function getAllEvents() {
   }
   
   export async function getEventById(eventId:string) {
-    // const allEvents = await getAllEvents();
-    const allEvents = DUMMY_EVENTS;
+    const allEvents = await getAllEvents();
+    // const allEvents = DUMMY_EVENTS;
     return allEvents.find((event) => event.id === eventId);
   }
   
